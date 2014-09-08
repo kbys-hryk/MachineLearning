@@ -1,29 +1,43 @@
-# -*- coding: utf-8 -*-
-
 __author__ = 'kbysPC'
+# coding:utf-8
+
+import numpy
+import theano
+import theano.tensor as T
 
 
-# ## note function
-# function([x],x*2)
-# <=同義=>
-# y = x*2
-# function([x],y)
+"""
+変数宣言
+"""
+input = []
+output = []
+node_n = []
+depth = 0
+weight = []
 
-# ## note fumctionのgiven引数
-# >>> x = T.dscalar()
-# >>> y = T.dscalar()
-# >>> c = T.dscalar()
-# >>> ff = theano.function([c], x*2+y, givens=[(x, c*10), (y,5)]) <== xをc*10,yを5で置き換える方法
-# >>> ff(2)
-# array(45)
+"""
+教師データ,パラメータをセットする関数
+"""
+
+def and_functiopn_data(self):
+    self.input = [
+        [1, 0],
+        [1, 1],
+        [0, 1],
+        [0, 0]
+    ]
+
+    self.output = [
+        0,
+        1,
+        0,
+        1
+    ]
+    self.node_n = [2,1]
+    self.depth = 1
+
+    weight = numpy.zeros()
 
 
-
-
-# ## note shared
-# b = theano.shared(numpy.array([1,2,3,4,5]))
-# f = theano.function([x], b * x)
-# f(2) ==> array([  2.,   4.,   6.,   8.,  10.])
-# b.get_value() 値の参照するkァン数
-# b.set_value("値") 値をセットする関数
-
+if __name__ == "__main__":
+    print 0
