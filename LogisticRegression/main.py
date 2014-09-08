@@ -67,3 +67,5 @@ class LogisticRegression(object):
     # 損失関数の値を返す関数
     def negative_log_likelihood(self, y):
         return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
+
+print "test"
