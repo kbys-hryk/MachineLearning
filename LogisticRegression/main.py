@@ -68,4 +68,4 @@ class LogisticRegression(object):
     def negative_log_likelihood(self, y):
         return -T.mean(T.log(self.p_y_given_x)[T.arange(y.shape[0]), y])
 
-print "test"
+print "test_A"
